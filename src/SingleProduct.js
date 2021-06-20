@@ -19,7 +19,7 @@ function SingleProduct(props) {
 
             <div style={{ display: 'flex' }}>
                 <div style={{ width: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <img src={`${product.image}`} alt={product.name} style={{
+                    <img src={`.${product.image}`} alt={product.name} style={{
                         width: '200px',
                         height: '350px'
                     }} />
