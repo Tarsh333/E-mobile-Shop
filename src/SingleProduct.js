@@ -17,14 +17,14 @@ function SingleProduct(props) {
             <h2 style={{ textAlign: 'center', margin: '80px 0px 40px 0px', fontSize: '40px', color: 'blue', fontWeight: 'normal' }}>{product.name}</h2>
             {product.id}
 
-            <div style={{ display: 'flex' }}>
-                <div style={{ width: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ display: 'flex' }} className='single-product-container'>
+                <div  style={{ width: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <img src={`.${product.image}`} alt={product.name} style={{
                         width: '200px',
                         height: '350px'
                     }} />
                 </div>
-                <div style={{ width: '50%' }}>
+                <div  className='single-product-details'>
                     <p className='font-25'>Model: {product.name}</p>
                     <p className='font-25'>Price: {product.price}</p>
                     <p className='font-25'>Some Info About Product: </p><p style={{color:'grey',marginBottom:'20px'}}>{product.description}</p>
@@ -39,7 +39,7 @@ function SingleProduct(props) {
                     >
                         {product.isInCart ? <span>In Cart</span> : <span>Add To Cart</span>}
                     </button>
-                    <Link to='/products' className='modal-content-button'>Back To Products</Link>
+                    <Link to='/products' className='modal-content-button back-to-products'>Back To Products</Link>
                 </div>
                 </div>
             </div>

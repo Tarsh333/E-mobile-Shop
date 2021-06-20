@@ -150,6 +150,7 @@ body{
   height: 50px;
   padding: 10px 30px;
 }
+.products-link{ margin-left: '70px'; font-size: '25px' }
 .nav a svg {
   text-transform: uppercase;
   vertical-align: center;
@@ -238,6 +239,16 @@ svg {
   font-weight: bold;
 
 }
+.stripe-btn{
+  display: block;
+  width:120px;
+  margin-left:auto;
+  margin-right:160px;
+  margin-top:10px
+}
+.single-product-details{
+  width: 50%;
+}
 @media only screen and (max-width:1100px){
   .product-card img {
     height: 200px;
@@ -279,4 +290,62 @@ svg {
     align-items: center;
   
 }
+.tr-product{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+}
+td{
+  margin-bottom: 8px;
+}
+.tr-heading{
+  display: none
+}
+.total,.clear-cart{
+  margin: auto;
+  margin-bottom: 10px;
+}
+.stripe-btn{
+  margin: auto;
+}
+.single-product-container{
+  flex-direction: column;
+  align-items: center;
+}
+.single-product-details{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.back-to-products{
+  margin-top: 8px;
+  margin-right: 30px;
+}
+.font-25{
+  font-size: 22px;
+}
+
+}
+@media only screen and (max-width:410px){
+  .nav{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+  }
+  .products-link{
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+  .nav a{
+    margin: auto;
+    margin-bottom: 8px;
+  }
+  .cartIcon{
+    margin-top: 10px;
+  }
 }

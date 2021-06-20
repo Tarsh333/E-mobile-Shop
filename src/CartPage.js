@@ -9,7 +9,7 @@ function CartPage(props) {
             {(props.cartContent.length) > 0 ?
                 (<><h2 style={{textAlign:'center',margin:'30px 0px 20px 0px',fontSize:'40px',color:'blue'}}>Your Cart</h2>
                     <table>
-                        <tr>
+                        <tr className='tr-heading'>
                             <th>Product</th>
                             <th>Product Name</th>
                             <th>Price</th>
@@ -20,7 +20,7 @@ function CartPage(props) {
                     {
                         props.cartContent.map((data, index) => {
                             return (
-                                <tr key={index}>
+                                <tr key={index} className='tr-product'>
                                     <td><img src={data.image} alt={data.name}/></td>
                                     <td>{data.name}</td>
                                     <td>{data.price}</td>
@@ -41,7 +41,7 @@ function CartPage(props) {
                     <p className='total'>Subtotal: {parseInt(props.total)}$</p>
                     <p className='total'>Tax: {(parseInt(props.total))/10}$</p>
                     <p className='total'>Total :{parseInt(props.total)+parseInt(props.total)/10} $</p>
-                   <div style={{width:'120px',marginLeft:'auto',marginRight:'160px',marginTop:'10px'}}> <StripeButton totalAmount={parseInt(props.total)+parseInt(props.total)/10} /></div>
+                   <div className='stripe-btn' > <StripeButton totalAmount={parseInt(props.total)+parseInt(props.total)/10} /></div>
                 </>)
                 :
                 (<h2 style={{textAlign:'center',margin:'10px 0px',fontSize:'40px',color:'blue'}}>Your Cart is empty</h2>)}

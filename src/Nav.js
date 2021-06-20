@@ -6,7 +6,7 @@ function Nav(props) {
     return (
         <div className='nav'>
             <Link to='/' className='home-link'><FaHome /></Link>
-            <Link to='/products' style={{ marginLeft: '70px', fontSize: '25px' }}>Products</Link>
+            <Link to='/products'  className='products-link'>Products</Link>
             <Link to='/cart' className='cartIcon'><FaShoppingCart /><span style={{ position:'absolute',bottom:'10px',right:'2px' }}> My Cart</span><span style={{
                 position: 'absolute',
                 width: '25px',
