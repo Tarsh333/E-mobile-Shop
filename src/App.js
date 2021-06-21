@@ -10,16 +10,40 @@ import HomePage from './HomePage';
 import CartPage from './CartPage';
 import SingleProduct from './SingleProduct';
 import ErrorPage from './ErrorPage';
+const getLocalStorage=()=>{
+  let cart=localStorage.getItem('cart')
+  if (cart) {
+    return (cart=JSON.parse(localStorage.getItem('cart')))
+  } else {
+    return []
+  }
+  }
 function App() {
 
 
-  const [cart, setCart] = React.useState([])
+  const [cart, setCart] = React.useState(getLocalStorage())
   const [showModal, setShowModal] = React.useState(false)
   const [modalData, setModalData] = React.useState()
   const [productData, setProductData] = React.useState(Data)
 
 
-
+React.useEffect(() => {
+  localStorage.setItem('cart',JSON.stringify(cart))
+}, [cart])
+React.useEffect(() => {
+  if (cart.length!==0) {
+    // console.log(cart);
+    const cartIds=cart.map((data)=>{return(parseInt(data.id))})
+    console.log(cartIds);
+    const initialProductData=productData.map((data)=>{
+      if (cartIds.includes(parseInt(data.id))) {
+        data.isInCart=true
+      }
+      return data
+    })
+    setProductData(initialProductData)
+  }
+}, [])
   const modalView = (id) => {
     let dataModal = productData.filter((data) => { return (data.id === id) })
     setModalData(dataModal[0])
