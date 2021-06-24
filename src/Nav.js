@@ -15,7 +15,8 @@ function Nav(props) {
                 textAlign: 'center',
                 border: '2px solid #fffdfd',
                 borderRadius: '18px',
-                left: '20px'
+                left: '20px',
+                fontSize:'20px'
             }}> {props.cartno}</span></Link>
 
 

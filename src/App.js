@@ -32,9 +32,7 @@ React.useEffect(() => {
 }, [cart])
 React.useEffect(() => {
   if (cart.length!==0) {
-    // console.log(cart);
     const cartIds=cart.map((data)=>{return(parseInt(data.id))})
-    console.log(cartIds);
     const initialProductData=productData.map((data)=>{
       if (cartIds.includes(parseInt(data.id))) {
         data.isInCart=true
